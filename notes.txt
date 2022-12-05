@@ -1,0 +1,12 @@
+how to simulate deck, in theory:
+each card has a cost, lands have a cost of zero
+if there is a zero cost card in hand, play it, but only once per turn
+every turn add one card to hand
+cards can have one of two effects, either add more cards to hand or increase the total cost
+using the total cost, play cards
+
+how to use hypergeometric formula:
+
+
+ramp should cost less than commander eg 4cmc commander ramp should be 0-2 mana
+average cost of core cards

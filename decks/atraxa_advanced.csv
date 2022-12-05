@@ -1,0 +1,12 @@
+name, type_line, mana_cost, cmc, color_identity, category
+"Atraxa, Praetors' Voice",Legendary Creature ï¿½ Phyrexian Angel Horror,"['G', 'W', 'U', 'B']",4.0,"['B', 'G', 'U', 'W']",Commander
+Contagion Engine,Artifact,['6'],6.0,[],Core
+
+Evolution Sage,Creature — Elf Druid,"['2', 'G']",3.0,['G'],Core
+Inexorable Tide,Enchantment,"['3', 'U', 'U']",5.0,['U'],Core
+Breeding Pool,Land — Forest Island,[],0.0,"['G', 'U']",Land
+Godless Shrine,Land — Plains Swamp,[],0.0,"['B', 'W']",Land
+Hallowed Fountain,Land — Plains Island,[],0.0,"['U', 'W']",Land
+Overgrown Tomb,Land — Swamp Forest,[],0.0,"['B', 'G']",Land
+Temple Garden,Land — Forest Plains,[],0.0,"['G', 'W']",Land
+Watery Grave,Land — Island Swamp,[],0.0,"['B', 'U']",Land

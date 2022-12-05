@@ -1,0 +1,24 @@
+Greetings, apprentice summoner,
+This is a guide on both basic deck building and how to use this program.
+
+To begin, you should first pick a commander. As Commander is a very casual format, don't worry as much about if your deck will be
+'meta. Instead, pick a commander with a cool or interesting effect you want to do more with or one with some art you like.
+You should also consider how the commanders color fits into the 'color pie', as this will determine how the deck plays.
+
+To learn more about how the different colors play and their lore, visit: https://mtg.fandom.com/wiki/Color
+
+Commander format has some rules that differentiate it from other formats, one of those being deck size.
+While other formats allow varied deck sizes from 40 to 60 cards, commander requires 99 cards and one commander.
+Also, with the exception of basic lands, you may only play one of each card name (unless specified otherwise)
+
+How does this thing work then?
+after picking your commander, a request is sent to the scryfall api, creating a new deck with the .csv format
+and adding it in to the deck. From then on, when refering to a deck for adding cards or some such, any request
+uses that commanders color_identity, ensuring that the deck is legal.
+
+What choices have been made?
+As mentioned before, this is not meant for competetive. Outside of precisely simulating the deck and each card interaction for
+the opening turns of a game thousands of times, it wouldn't be possible to programatically find a formula for what cards to play
+
+Instead, this uses webscraping to find a card on mtggoldfish and use the data is has concerning what cards are being played in
+similar decks to reccomend cards as a shortcut instead of having to teach a computer the mtg meta and rulings concerning timing
