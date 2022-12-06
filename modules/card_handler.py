@@ -82,7 +82,7 @@ def get_archetype(deck):
 
 def get_archetype_names(deck):
     name = ""
-    with open('./decks/'+deck+'.csv') as f:
+    with open('./decks/'+deck) as f:
         reader = csv.reader(f)
         header_row = next(reader)
         name = next(reader)[0]
@@ -123,7 +123,7 @@ def get_effect_text(name):
     return r.json()['data'][0]['oracle_text'].split('\n')
 
 def get_commander_colors(deck):
-    with open('./decks/'+deck+'.csv', 'r') as f:
+    with open('./decks/'+deck, 'r') as f:
         reader = csv.reader(f)
         header_row = next(reader)
         for row in reader:

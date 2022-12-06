@@ -66,17 +66,17 @@ class App(ctk.CTk):
         self.rec_select = ctk.CTkFrame(self.tabview.tab("Get Recomendations"))
         self.rec_select.grid(row=1, column=1)
 
-        self.rec_ramp = ctk.CTkButton(self.rec_select, text="rec ramp")
+        self.rec_ramp = ctk.CTkButton(self.rec_select, text="rec ramp", command=self.get_rec_ramp)
         self.rec_ramp.grid(row=0, column=0)
-        self.rec_draw = ctk.CTkButton(self.rec_select, text="rec draw")
+        self.rec_draw = ctk.CTkButton(self.rec_select, text="rec draw", command=self.get_rec_draw)
         self.rec_draw.grid(row=1, column=0)
-        self.rec_removal = ctk.CTkButton(self.rec_select,  text="rec removal")
+        self.rec_removal = ctk.CTkButton(self.rec_select,  text="rec removal", command=self.get_rec_removal)
         self.rec_removal.grid(row=2, column=0)
-        self.rec_wipe = ctk.CTkButton(self.rec_select, text="rec boardwipe")
+        self.rec_wipe = ctk.CTkButton(self.rec_select, text="rec boardwipe", command=self.get_rec_wipe)
         self.rec_wipe.grid(row=3, column=0)
-        self.rec_tutor = ctk.CTkButton(self.rec_select, text="rec tutor")
+        self.rec_tutor = ctk.CTkButton(self.rec_select, text="rec tutor", command=self.get_rec_tutor)
         self.rec_tutor.grid(row=4, column=0)
-        self.rec_recursion = ctk.CTkButton(self.rec_select, text="rec recursion")
+        self.rec_recursion = ctk.CTkButton(self.rec_select, text="rec recursion", command=self.get_rec_recursion)
         self.rec_recursion.grid(row=5, column=0)
 
         self.warn_label = ctk.CTkLabel(self.tabview.tab("Get Recomendations"), text="These actions may take up to 30sec for big opperations, please be patient!")
@@ -119,6 +119,30 @@ class App(ctk.CTk):
             deck_handler.write_to_deck(self.option_menu.get(), card_handler.get_card_as_list(self.cardsearch.get()))
             self.textbox.delete("0.0", "end")
             self.textbox.insert("0.0", deck_handler.return_deck(self.option_menu.get()))
+    
+    def get_rec_ramp(self):
+        self.rec_text.delete("0.0", "end")
+        self.rec_text.insert("0.0", deck_handler.get_meta_ramp(self.option_menu.get()))
+    
+    def get_rec_draw(self):
+        self.rec_text.delete("0.0", "end")
+        self.rec_text.insert("0.0", deck_handler.get_card_draw(self.option_menu.get()))
+
+    def get_rec_removal(self):
+        self.rec_text.delete("0.0", "end")
+        self.rec_text.insert("0.0", deck_handler.get_targeted_removal(self.option_menu.get()))
+
+    def get_rec_wipe(self):
+        self.rec_text.delete("0.0", "end")
+        self.rec_text.insert("0.0", deck_handler.get_boardwipe(self.option_menu.get()))
+
+    def get_rec_tutor(self):
+        self.rec_text.delete("0.0", "end")
+        self.rec_text.insert("0.0", deck_handler.get_tutor(self.option_menu.get()))
+
+    def get_rec_recursion(self):
+        self.rec_text.delete("0.0", "end")
+        self.rec_text.insert("0.0", deck_handler.get_graveyard_recursion(self.option_menu.get()))
 
 if __name__ == "__main__":
     app = App()

@@ -221,37 +221,55 @@ def get_meta_ramp(deck):
     colors = card_handler.get_commander_colors(deck)
     ramp_list = card_handler.get_card_list_full("function:ramp legal:commander commander:"+colors)
     meta_list = card_handler.get_archetype_names(deck)
-    return [l for l in meta_list if l in ramp_list]
+    result = ""
+    for i in [l for l in meta_list if l in ramp_list]:
+        result += i +"\n"
+    return result
 
 def get_card_draw(deck):
     colors = card_handler.get_commander_colors(deck)
     draw_list = card_handler.get_card_list_full("function:draw legal:commander commander:"+colors)
     meta_list = card_handler.get_archetype_names(deck)
-    return [l for l in meta_list if l in draw_list]
+    result = ""
+    for i in [l for l in meta_list if l in draw_list]:
+        str_result += i + '\n'
+    return result
 
 def get_targeted_removal(deck):
     colors = card_handler.get_commander_colors(deck)
     removal_list = card_handler.get_card_list_full("function:removal o:target legal:commander commander:"+colors)
     meta_list = card_handler.get_archetype_names(deck)
-    return [l for l in meta_list if l in removal_list]
+    result = ""
+    for i in [l for l in meta_list if l in removal_list]:
+        result += i + '\n'
+    return result
 
 def get_boardwipe(deck):
     colors = card_handler.get_commander_colors(deck)
     wipe_list = card_handler.get_card_list_full('function"board wipe" legal:commander commander:'+colors)
     meta_list = card_handler.get_archetype_names(deck)
-    return [l for l in meta_list if l in wipe_list]
+    result = ""
+    for i in [l for l in meta_list if l in wipe_list]:
+        result += i + '\n'
+    return result
 
 def get_tutor(deck):
     colors = card_handler.get_commander_colors(deck)
     tutor_list = card_handler.get_card_list_full("function:tutor legal:commander commander:"+colors)
     meta_list = card_handler.get_archetype_names(deck)
-    return [l for l in meta_list if l in tutor_list]
+    result = ""
+    for i in [l for l in meta_list if l in tutor_list]:
+        result += i + '\n'
+    return result
 
 def get_graveyard_recursion(deck):
     colors = card_handler.get_commander_colors(deck)
     return_list = card_handler.get_card_list_full('o:"return target" o:"from your graveyard" legal:commander commander:'+colors)
     meta_list = card_handler.get_archetype_names(deck)
-    return [l for l in meta_list if l in return_list]
+    result = ""
+    for i in [l for l in meta_list if l in return_list]:
+        result += i + '\n'
+    return result
 
 def convert_to_txt(deck):
     with open('./decks/'+ deck + '.csv') as f:
