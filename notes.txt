@@ -10,3 +10,5 @@ how to use hypergeometric formula:
 
 ramp should cost less than commander eg 4cmc commander ramp should be 0-2 mana
 average cost of core cards
+
+= 31.42 + 3.13 * average mana value of your spells – 0.28 * number of cheap card draw or mana ramp spells
