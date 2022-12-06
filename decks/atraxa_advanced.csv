@@ -10,3 +10,6 @@ Hallowed Fountain,Land — Plains Island,[],0.0,"['U', 'W']",Land
 Overgrown Tomb,Land — Swamp Forest,[],0.0,"['B', 'G']",Land
 Temple Garden,Land — Forest Plains,[],0.0,"['G', 'W']",Land
 Watery Grave,Land — Island Swamp,[],0.0,"['B', 'U']",Land
+Deepglow Skate,Creature — Fish,"['4', 'U']",5.0,['U'],Core
+"Vorinclex, Monstrous Raider",Legendary Creature — Phyrexian Praetor,"['4', 'G', 'G']",6.0,['G'],Core
+Thrummingbird,Creature — Phyrexian Bird Horror,"['1', 'U']",2.0,['U'],Core

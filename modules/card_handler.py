@@ -111,11 +111,14 @@ def get_card_as_list(name):
         return "oops, the chosen name has more than one card. Please refine search and try again"
     if(r.json()['total_cards']==1):
         card = r.json()['data'][0]
-        mana_cost = [l[:-1] for l in card['mana_cost'].split('{')]
-        return [card['name'], card['type_line'], str(mana_cost[1:]), card['cmc'], str(card['color_identity'])]
+        if card['mana_cost']:
+            mana_cost = [l[:-1] for l in card['mana_cost'].split('{')]
+            return [card['name'], card['type_line'], str(mana_cost[1:]), card['cmc'], str(card['color_identity'])]
+        else:
+            return "card got no mana cost, gonna fix this at not 4:AM"
 
 def get_effect_text(name):
-    r = requests.get('https://api.scryfall.com/cards/search?q="'+name+'"')
+    r = requests.get('https://api.scryfall.com/cards/search?q=!"'+name+'"')
     time.sleep(0.1)
     return r.json()['data'][0]['oracle_text'].split('\n')
 

@@ -24,8 +24,14 @@ def begin_deck_construction(name, card_name):
         return "Success!"
 
 def return_deck(name):
-    with open("./decks/"+name+".txt", 'r') as f:
-        return f.read()
+    with open("./decks/"+name, 'r') as f:
+        reader = csv.reader(f)
+        header_row = next(reader)
+        result = ""
+        for l in reader:
+            if l:
+                result += l[0]+'\n'
+        return result
 
 def edit_deck(deck, command):
     with open("./decks/"+deck+".txt", 'r+') as f:
@@ -47,6 +53,9 @@ def edit_deck(deck, command):
         f.truncate()
         return lines
 
+def edit_deck_fixed(deck):
+    print("stuff")
+
 def clean_empty(deck):
     with open("./decks/"+deck+".txt", 'r+') as f:
         lines = f.readlines()
@@ -58,7 +67,7 @@ def clean_empty(deck):
                 print(line.strip())
 
 def write_to_deck(deck, card, sType="Core"):
-    with open('./decks/'+deck+'.csv', 'r+') as f:
+    with open('./decks/'+deck, 'r+') as f:
         reader = csv.reader(f)
         f_writer = csv.writer(f)
         header_row = next(reader)

@@ -36,8 +36,8 @@ def hyper_calc_fin(N, k, n, x):
         result += hyper_calc(N, k, n, i)
     return result
 
-def fix_ratios(m, g, t):
-    #we want g chance at m mana by t turn
+def fix_ratios(g, t):
+    #we want g chance to hit t mana our first turns
     N = 99
     k1 = 14
     n = t
